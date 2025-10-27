@@ -31,4 +31,4 @@ def branching_and_trigger_rule():
     
     check_condition(start_task()) >> [true_one(), false_one()]>> end_task()
 
-task_branching()
+branching_and_trigger_rule()
