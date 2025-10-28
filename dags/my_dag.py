@@ -1,6 +1,28 @@
 from airflow.sdk import dag, task
 
-@dag(dag_id="my_dag" ,schedule='@daily', start_date=None, catchup=False, tags=['ercan'])
+doc_md_DAG = """
+### The Activity DAG
+
+This DAG will help me decide what to do today. It uses the [BoredAPI](https://bored-api.appbrewery.com/random) to do so.
+
+Before I get to do the activity I will have to:
+
+- Clean up the kitchen.
+- Check on my pipelines.
+- Water the plants.
+
+Here are some happy plants:
+
+<img src="https://www.publicdomainpictures.net/pictures/80000/velka/succulent-roses-echeveria.jpg" alt="plants" width="300"/>
+"""
+
+@dag(dag_id="my_dag" ,
+     schedule='@daily', 
+     start_date=None, 
+     catchup=False, 
+     tags=['ercan'],
+     doc_md=doc_md_DAG,
+)
 def my_dag():
     @task
     def training_model(accuracy: int):
