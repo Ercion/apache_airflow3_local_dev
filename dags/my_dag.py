@@ -24,7 +24,10 @@ Here are some happy plants:
      doc_md=doc_md_DAG,
 )
 def my_dag():
-    @task
+    doc_md_task = """ ### Purpose of this task
+                    This task **boldly** suggests a daily activity."""
+
+    @task(doc_md=doc_md_task)
     def training_model(accuracy: int):
         return accuracy
     
