@@ -119,3 +119,7 @@ venv.bak/
 airflow.cfg
 unittests.cfg
 logs/ 
+
+# Pytest
+.pytest_cache/
+__pycache__/
