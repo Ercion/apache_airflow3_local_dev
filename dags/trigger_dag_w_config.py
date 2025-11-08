@@ -4,7 +4,7 @@ from datetime import datetime
 @dag(
     dag_id="templating_dag_taskflow",
     start_date=datetime(2022, 1, 1),
-    schedule_interval=None,
+    schedule=None,
     catchup=False,
     render_template_as_native_obj=True
 )

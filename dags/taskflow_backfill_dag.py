@@ -5,7 +5,7 @@ from datetime import datetime
 @dag(
     dag_id='taskflow_backfill_dag',
     start_date=datetime(2025, 10, 1),
-    schedule_interval='@daily',
+    schedule='@daily',
     catchup=False,
     tags=['ercan'],
     default_args={

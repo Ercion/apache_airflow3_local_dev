@@ -32,7 +32,7 @@ def dynamic_task_mapping():
         return len(sql)  # Just a dummy value based on SQL length
     
     table_names = generate_table_names()
-    sql_queries = generate_sql.expand(table_name=table_names, execution_date="{{ ds }}")
+    sql_queries = generate_sql.partial(execution_date="{{ ds }}").expand(table_name=table_names)
     execute_query.expand(sql=sql_queries)
 
 dynamic_task_mapping()

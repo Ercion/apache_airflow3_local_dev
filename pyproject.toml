@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]        # Specifies the folder containing your test files
+addopts = "-v --maxfail=5"   # Enable verbose output and stop after 5 failures
+
