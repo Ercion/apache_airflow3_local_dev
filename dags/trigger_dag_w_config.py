@@ -6,7 +6,8 @@ from datetime import datetime
     start_date=datetime(2022, 1, 1),
     schedule=None,
     catchup=False,
-    render_template_as_native_obj=True
+    render_template_as_native_obj=True,
+    tags=['ercan'],
 )
 def templating_dag(dag_run=None):
     

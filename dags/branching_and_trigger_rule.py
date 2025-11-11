@@ -5,7 +5,8 @@ from datetime import datetime
     dag_id="branching_and_trigger_rule",
     start_date=datetime(2025, 10, 1),
     schedule='@daily',
-    catchup=False
+    catchup=False,
+    tags=['ercan'],
 )
 def branching_and_trigger_rule():
 

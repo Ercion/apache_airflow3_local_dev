@@ -5,7 +5,8 @@ from datetime import datetime
     dag_id="task_branching",
     start_date=datetime(2025, 10, 1),
     schedule='@daily',
-    catchup=False
+    catchup=False,
+    tags=['ercan'],
 )
 def task_branching():
 
