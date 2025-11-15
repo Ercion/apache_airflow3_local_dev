@@ -1,0 +1,10 @@
+// just place this file in your workspace folder as .vscode/settings.json
+
+{
+    "python.testing.pytestEnabled": true,
+    //"python.testing.pytestArgs": ["tests"],
+    //"python.testing.unittestEnabled": false,
+    //"python.testing.nosetestsEnabled": false,
+    //"python.envFile": "${workspaceFolder}/.env",
+    "python.testing.cwd": "${workspaceFolder}/tests"
+}

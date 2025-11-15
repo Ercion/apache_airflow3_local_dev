@@ -1,4 +1,32 @@
+[build-system]
+requires = ["setuptools>=80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "My Airflow DAG project"
+requires-python = ">=3.8"
+
+dependencies = [
+    "apache-airflow>2.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0", 
+    "black>=23.0",
+    "isort>=5.0",
+    "flake8>=6.0",
+    "ruff>=0.0.300",
+]
+
+[tool.setuptools.packages]
+# Include only the "dags" package and subpackages
+find = { include = ["dags", "dags.*"] }
+
+
 [tool.pytest.ini_options]
-testpaths = ["tests"]        # Specifies the folder containing your test files
+testpaths = ["tests"]        # Test files are located in the 'tests' directory
 addopts = "-v --maxfail=5"   # Enable verbose output and stop after 5 failures
 
