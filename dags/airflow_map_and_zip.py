@@ -1,4 +1,4 @@
-from airflow.sdk import dag, task
+from airflow.decorators import dag, task
 from datetime import datetime
 
 @dag(
@@ -16,14 +16,11 @@ def airflow_map_and_zip():
     
     @task
     def square_number(number: int):
+        print(f"Squaring number: {number}")
         return number * number
     
-    
-    numbers= generate_numbers()
-    squared_numbers = square_number.map(number=numbers)
-    
-    print(square_number.zip(numbers, squared_numbers) )
-
-    print(squared_numbers)
+    numbers = generate_numbers()
+    squared_numbers = square_number.map(numbers)  
+    return squared_numbers
 
 airflow_map_and_zip()
