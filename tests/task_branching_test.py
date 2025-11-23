@@ -21,12 +21,12 @@ def dagbag():
 def test_dag_loading(dagbag):
     """Test that the DAG is loaded correctly."""
     # Get the DAG by its ID (task_branching is the DAG ID from the example)
-    assert len(dagbag.import_errors) == 0
+    assert len(dagbag.import_errors) == 0, f"DAG import errors: {dagbag.import_errors}"
     dag = dagbag.dags['task_branching']
     
     # Assert that the DAG is loaded and its ID matches the expected value
     assert dag is not None
-    assert dag.dag_id == 'task_branching'
+    assert dag.dag_id == 'task_branching', f"Expected DAG ID 'task_branching', got '{dag.dag_id}'"
 
 # Test the start_task logic (call the underlying function directly)
 def test_task_logic(dagbag):
@@ -38,7 +38,7 @@ def test_task_logic(dagbag):
     
     # Call the function directly, which should return 7
     result = start_task_func()  # The start_task function should return 7
-    assert result == 7
+    assert result == 7, f"Expected start_task to return 7, got {result}"
 
 # Test the branching logic
 def test_branching_logic(dagbag):
